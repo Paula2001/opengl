@@ -13,15 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\RawShapes">
+      <UniqueIdentifier>{159f9aa7-5860-42b9-ba64-a5a1670d405c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ModelsHeaders">
+      <UniqueIdentifier>{f7b6c954-f12e-4c25-a35d-1ac80324e2d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ShaderHeaders">
+      <UniqueIdentifier>{2fe784d0-fdfb-4135-b382-d6420181ce48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Models">
+      <UniqueIdentifier>{c095fe93-25cf-4328-814a-c2bae9dd922a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ScenesHeaders">
+      <UniqueIdentifier>{18dce59b-ca07-4fdc-9fe0-fa047863dd4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes">
+      <UniqueIdentifier>{660fa989-1dec-45f8-a0a4-6038466d1670}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OpenGLStart.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DrawableObject.cpp">
@@ -36,23 +51,47 @@
     <ClCompile Include="Transformation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Model.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Light.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TriangleModel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SkyScene.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="SuziSmoothModel.cpp">
+      <Filter>Source Files\Models</Filter>
     </ClCompile>
     <ClCompile Include="SphereModel.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeModel.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="TriangleModel.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyScene.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="GiftModel.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="gift.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BushesModel.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="PlainModel.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="SuziFlatModel.cpp">
+      <Filter>Source Files\Models</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -62,22 +101,10 @@
     <ClInclude Include="Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="DrawableObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ShaderProgram.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Transformation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Model.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
@@ -86,17 +113,65 @@
     <ClInclude Include="Light.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TriangleModel.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="tree.h">
+      <Filter>Header Files\RawShapes</Filter>
     </ClInclude>
-    <ClInclude Include="SkyScene.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Model.h">
+      <Filter>Header Files\ModelsHeaders</Filter>
     </ClInclude>
     <ClInclude Include="SphereModel.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\ModelsHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="SuziSmoothModel.h">
+      <Filter>Header Files\ModelsHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="TriangleModel.h">
+      <Filter>Header Files\ModelsHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeModel.h">
+      <Filter>Header Files\ModelsHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="suzi.h">
+      <Filter>Header Files\RawShapes</Filter>
     </ClInclude>
     <ClInclude Include="sphere.h">
+      <Filter>Header Files\RawShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyScene.h">
+      <Filter>Header Files\ScenesHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files\ScenesHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files\ShaderHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderProgram.h">
+      <Filter>Header Files\ShaderHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="GiftModel.h">
+      <Filter>Header Files\ModelsHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="gift.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BushesModel.h">
+      <Filter>Header Files\ModelsHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="bushes.h">
+      <Filter>Header Files\RawShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="PlainModel.h">
+      <Filter>Header Files\ModelsHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="plain.h">
+      <Filter>Header Files\RawShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="SuziFlatModel.h">
+      <Filter>Header Files\ModelsHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="suziFlat.h">
+      <Filter>Header Files\RawShapes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,12 +3,21 @@
 #include <iostream>
 #include "SkyScene.h"
 using namespace std;
-
+using namespace ScenesHeaders;
 void error_callback(int error, const char* description)
 {
 	cout << "Error : " << description << endl;
 	throw runtime_error("GLFW error");
 }
+
+void cursor_callback(GLFWwindow* window, double x, double y) {
+    printf("cursor_callback x:%f y:%f \n", x, y);
+}
+
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
+    std::cout << "Scrolling: X Offset=" << xoffset << " Y Offset=" << yoffset << std::endl;
+}
+
 
 Application* Application::setVersion() {
 	glfwInit();
@@ -21,9 +30,11 @@ Application* Application::setVersion() {
 
 Application* Application::setWindow(int width, int height,const char* title) {
 	this->window = glfwCreateWindow(width, height, title, NULL, NULL);
-	glfwMakeContextCurrent(window);
+	glfwMakeContextCurrent(this->window);
     glewInit();
     glEnable(GL_DEPTH_TEST); //Z-buffer
+    glfwSetCursorPosCallback(this->window, cursor_callback);
+    glfwSetScrollCallback(this->window, scroll_callback);
 	return this;
 }
 

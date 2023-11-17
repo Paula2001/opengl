@@ -1,6 +1,8 @@
 #include "SphereModel.h"
 #include <GL/glew.h>
 #include "sphere.h"
+
+using namespace ModelsHeaders;
 Model* SphereModel::setTheShape() {
     GLuint VBO = 0;
     glGenBuffers(1, &VBO); // generate the VBO

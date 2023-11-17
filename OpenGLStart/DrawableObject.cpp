@@ -12,13 +12,14 @@ DrawableObject* DrawableObject::setShader(Shader* shader) {
 	this->shader = shader;
 	return this;
 }
-void DrawableObject::move() {
+void DrawableObject::move(float test) {
 	this->transformation
 		->rotateModel()
 		->perspectiveModel()
 		->translateModel()
 		->bindTransformation(
-			this->shader->getShaderProgram()
+			this->shader->getShaderProgram(),
+			test
 		);
 }
 void DrawableObject::draw() {

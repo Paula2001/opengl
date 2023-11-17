@@ -2,6 +2,9 @@
 #include "Model.h"
 #include "Transformation.h"
 #include "Shader.h"
+
+using namespace ModelsHeaders;
+
 class DrawableObject
 {
 	public:
@@ -10,7 +13,7 @@ class DrawableObject
 		DrawableObject* setShader(Shader* shader);
 		Shader* shader;
 		void draw();
-		void move();
+		void move(float test);
 	private:
 		Model* model;
 		Transformation* transformation;

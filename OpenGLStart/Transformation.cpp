@@ -19,7 +19,7 @@ Transformation* Transformation::perspectiveModel() {
 	return this;
 }
 
-void Transformation::bindTransformation(unsigned int shaderProgram) {
+void Transformation::bindTransformation(unsigned int shaderProgram, float test) {
 	unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
 	unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
 	unsigned int projLoc = glGetUniformLocation(shaderProgram, "projection");
@@ -29,7 +29,7 @@ void Transformation::bindTransformation(unsigned int shaderProgram) {
 	// Note: Currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
 	glUniformMatrix4fv(projLoc, 1, GL_FALSE, value_ptr(this->perspectiveVar));
 
-	auto M = glm::lookAt(glm::vec3(5.0f, 0.0f, 0.0f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.f, 0.f, 1.f));
+	auto M = glm::lookAt(glm::vec3(test, 0.0f, 0.0f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.f, 0.f, 1.f));
 	auto matrixID = glGetUniformLocation(shaderProgram, "viewMatrix");
 	glUniformMatrix4fv(matrixID, 1, GL_FALSE, glm::value_ptr(M));
 
