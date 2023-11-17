@@ -23,6 +23,7 @@ Application* Application::setWindow(int width, int height,const char* title) {
 	this->window = glfwCreateWindow(width, height, title, NULL, NULL);
 	glfwMakeContextCurrent(window);
     glewInit();
+    glEnable(GL_DEPTH_TEST); //Z-buffer
 	return this;
 }
 
@@ -31,10 +32,10 @@ void Application::initRenderLoop() {
     
     while (!glfwWindowShouldClose(this->window)) {
         // TODO: Add Input in here
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // Render this init color of the background
         glClearColor(1.2f, 0.3f, 0.3f, 0.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
 
         x->init();
         // TODO: all the dynamic stuff in here

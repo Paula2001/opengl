@@ -7,7 +7,7 @@
 
 Transformation* Transformation::rotateModel() {
 	// Info : middle angel
-	this->rotateVar = rotate(mat4(1.0f), (float)glfwGetTime(), vec3(0.0f, 0.0f, 1.0f));
+	this->rotateVar = rotate(mat4(1.0f), (float)glfwGetTime(), vec3(1.0f, 0.0f, 1.0f));
 	return this;
 }
 Transformation* Transformation::translateModel() {
@@ -28,4 +28,13 @@ void Transformation::bindTransformation(unsigned int shaderProgram) {
 	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, value_ptr(this->translateVar));
 	// Note: Currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
 	glUniformMatrix4fv(projLoc, 1, GL_FALSE, value_ptr(this->perspectiveVar));
+
+	auto M = glm::lookAt(glm::vec3(5.0f, 0.0f, 0.0f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.f, 0.f, 1.f));
+	auto matrixID = glGetUniformLocation(shaderProgram, "viewMatrix");
+	glUniformMatrix4fv(matrixID, 1, GL_FALSE, glm::value_ptr(M));
+
+	auto N = glm::perspective(45.0f, 800.f / 600.f, 0.1f, 100.0f);
+	matrixID = glGetUniformLocation(shaderProgram, "projectMatrix");
+	glUniformMatrix4fv(matrixID, 1, GL_FALSE, glm::value_ptr(N));
+
 }

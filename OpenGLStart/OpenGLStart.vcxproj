@@ -137,6 +137,7 @@
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderProgram.cpp" />
     <ClCompile Include="SkyScene.cpp" />
+    <ClCompile Include="SphereModel.cpp" />
     <ClCompile Include="Transformation.cpp" />
     <ClCompile Include="TriangleModel.cpp" />
   </ItemGroup>
@@ -151,6 +152,8 @@
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderProgram.h" />
     <ClInclude Include="SkyScene.h" />
+    <ClInclude Include="sphere.h" />
+    <ClInclude Include="SphereModel.h" />
     <ClInclude Include="Transformation.h" />
     <ClInclude Include="TriangleModel.h" />
   </ItemGroup>

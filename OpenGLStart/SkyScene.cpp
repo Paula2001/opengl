@@ -1,32 +1,49 @@
 #include "SkyScene.h"
 #include "DrawableObject.h"
 #include "TriangleModel.h"
+#include "SphereModel.h"
+const char* v1 =
+"#version 330\n"
+"uniform mat4 model;"
+"uniform mat4 projectMatrix;"
+"uniform mat4 viewMatrix;"
+"out vec3 vertexColor;"
+"layout(location=0) in vec3 vp;"
+"layout(location=1) in vec3 vn;"
+"void main () {"
+"     vertexColor=vn;"
+"     gl_Position = projectMatrix * viewMatrix * model * vec4(vp, 1.0);"
+"}";
 
-const char* v1 = "#version 330 core\n"
-"layout (location = 0) in vec3 aPos;\n"
-"uniform mat4 model;\n"
-"uniform mat4 view;\n"
-"uniform mat4 projection;\n"
-"void main()\n"
-"{\n"
-"   gl_Position = model * vec4(aPos, 1.0);\n"
-"}\0";
 
-const char* f1 = "#version 330 core\n"
-"out vec4 FragColor;\n"
-"void main()\n"
-"{\n"
-"   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
-"}\0";
+
+const char* f1 =
+"#version 330\n"
+"out vec4 frag_colour;"
+"in vec3 vertexColor;"
+"void main () {"
+"     frag_colour = vec4(vertexColor, 0.0);"
+"}";
 
 Scene* SkyScene::ComposeScene()
 {
-	this->addObject(
+	/*this->addObject(
 		(new DrawableObject())
 		->setModel((new TriangleModel())->setTheShape())
 		->setTransformation(new Transformation())
 		->setShader(
 			(new Shader())
+			->setFragmentShader(f1)
+			->setVertexShader(v1)
+			->linkShaders()
+		)
+	);*/
+
+	this->addObject(
+		(new DrawableObject())
+		->setModel((new SphereModel)->setTheShape())
+		->setTransformation(new Transformation())
+		->setShader((new Shader())
 			->setFragmentShader(f1)
 			->setVertexShader(v1)
 			->linkShaders()
