@@ -15,12 +15,13 @@ const char* v1 =
 "uniform mat4 model;"
 "uniform mat4 projectMatrix;"
 "uniform mat4 viewMatrix;"
+"uniform mat4 camMatrix;"
 "out vec3 vertexColor;"
 "layout(location=0) in vec3 vp;"
 "layout(location=1) in vec3 vn;"
 "void main () {"
 "     vertexColor=vn;"
-"     gl_Position = projectMatrix * viewMatrix * model * vec4(vp, 1.0);"
+"     gl_Position = camMatrix * model * vec4(vp, 1.0);"
 "}";
 
 
@@ -102,7 +103,8 @@ Scene* SkyScene::ComposeScene()
 	//);
 
 
-
+	const unsigned int width = 800;
+	const unsigned int height = 800;
 	this->addObject(
 		(new DrawableObject())
 		->setModel((new SuziFlatModel)->setTheShape())

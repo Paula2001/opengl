@@ -1,15 +1,20 @@
-#include "Scene.h"
 #include <GL/glew.h>
+#include "Scene.h"
 using namespace ScenesHeaders;
 
 Scene* Scene::addObject(DrawableObject* obj) {
 	this->objects.push_back(obj);
 	return this;
 }
-
-void Scene::init() {
+Scene* Scene::setCamera(Camera* camera) {
+	this->camera = camera;
+	return this;
+}
+void Scene::init(GLFWwindow* window) {
 	for (auto& obj : this->objects) {
 		glUseProgram(obj->shader->getShaderProgram());
+		this->camera->Inputs(window);
+		this->camera->Matrix(45.0f, 0.1f, 100.0f, obj->shader->getShaderProgram(), "camMatrix");
 		obj->draw();
 		obj->move(4.0f);
 	}

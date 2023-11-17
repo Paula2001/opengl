@@ -1,5 +1,5 @@
-#include "TriangleModel.h"
 #include <GL/glew.h>
+#include "TriangleModel.h"
 using namespace ModelsHeaders;
 Model* TriangleModel::setTheShape() {
     // Set up vertex data (and buffer(s)) and configure vertex attributes

@@ -1,4 +1,5 @@
 #include <GL/glew.h>
+#include "Camera.h";
 #include "Application.h"
 #include <iostream>
 #include "SkyScene.h"
@@ -39,7 +40,8 @@ Application* Application::setWindow(int width, int height,const char* title) {
 }
 
 void Application::initRenderLoop() {
-    auto x = (new SkyScene())->ComposeScene();
+    Camera* c = new Camera(800, 800, glm::vec3(0.0f, 0.0f, 2.0f));
+    auto x = (new SkyScene())->ComposeScene()->setCamera(c);
     
     while (!glfwWindowShouldClose(this->window)) {
         // TODO: Add Input in here
@@ -48,7 +50,7 @@ void Application::initRenderLoop() {
         // Render this init color of the background
         glClearColor(1.2f, 0.3f, 0.3f, 0.0f);
 
-        x->init();
+        x->init(this->window);
         // TODO: all the dynamic stuff in here
 
         // TODO: all the dynamic stuff in here
