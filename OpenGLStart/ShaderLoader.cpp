@@ -8,6 +8,7 @@ string ShaderLoader::loadFile(const char* fname)
 	if (!file.is_open())
 	{
 		cout << "Unable to open file " << fname << endl;
+		throw runtime_error("Unable to open file of one of the shaders");
 		//exit(1);
 	}
 	std::stringstream fileData;
@@ -41,7 +42,7 @@ GLuint ShaderLoader::loadShader(const char* vertexFile, const char* fragmentFile
 		GLchar* strInfoLog = new GLchar[infoLogLength + 1];
 		glGetShaderInfoLog(vertexID, infoLogLength, NULL, strInfoLog);
 		fprintf(stderr, "Compile failure in Vertex shader:\n%s\n", strInfoLog);
-		delete[] strInfoLog;
+		throw runtime_error("vertex shader error");
 	}
 
 	fragmentID = glCreateShader(GL_FRAGMENT_SHADER); //Fragment Shader
@@ -56,7 +57,7 @@ GLuint ShaderLoader::loadShader(const char* vertexFile, const char* fragmentFile
 		GLchar* strInfoLog = new GLchar[infoLogLength + 1];
 		glGetShaderInfoLog(fragmentID, infoLogLength, NULL, strInfoLog);
 		fprintf(stderr, "Compile failure in Fragment shader:\n%s\n", strInfoLog);
-		delete[] strInfoLog;
+		throw runtime_error("fragment shader error");
 	}
 
 	shaderProgramID = glCreateProgram();

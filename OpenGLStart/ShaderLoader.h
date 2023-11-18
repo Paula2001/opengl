@@ -1,5 +1,5 @@
 #pragma once
-//GLEW - The OpenGL Extension Wrangler Library
+
 #include <GL/glew.h>
 
 #include <string.h> 

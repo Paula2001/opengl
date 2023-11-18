@@ -136,6 +136,7 @@
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="OpenGLStart.cpp" />
+    <ClCompile Include="PhongScene.cpp" />
     <ClCompile Include="PlainModel.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Shader.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="GiftModel.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="PhongScene.h" />
     <ClInclude Include="plain.h" />
     <ClInclude Include="PlainModel.h" />
     <ClInclude Include="Scene.h" />
@@ -179,6 +181,8 @@
   <ItemGroup>
     <None Include="basic.frag" />
     <None Include="basic.vert" />
+    <None Include="phong.frag" />
+    <None Include="phong.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

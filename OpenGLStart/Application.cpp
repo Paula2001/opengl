@@ -3,6 +3,7 @@
 #include "Application.h"
 #include <iostream>
 #include "SkyScene.h"
+#include "PhongScene.h"
 using namespace std;
 using namespace ScenesHeaders;
 void error_callback(int error, const char* description)
@@ -42,7 +43,7 @@ Application* Application::setWindow(int width, int height,const char* title) {
 void Application::initRenderLoop() {
     Camera* c = new Camera(800, 800, glm::vec3(1.0f, 1.0f, 10.0f));
     auto x = (new SkyScene())->ComposeScene()->setCamera(c);
-    
+    //auto x = (new PhongScene())->ComposeScene()->setCamera(c);
     while (!glfwWindowShouldClose(this->window)) {
         // TODO: Add Input in here
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

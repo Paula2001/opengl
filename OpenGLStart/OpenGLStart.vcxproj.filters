@@ -96,6 +96,9 @@
     <ClCompile Include="SuziFlatModel.cpp">
       <Filter>Source Files\Models</Filter>
     </ClCompile>
+    <ClCompile Include="PhongScene.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CallBacks.h">
@@ -176,12 +179,21 @@
     <ClInclude Include="suziFlat.h">
       <Filter>Header Files\ModelsHeaders\RawShapes</Filter>
     </ClInclude>
+    <ClInclude Include="PhongScene.h">
+      <Filter>Header Files\ScenesHeaders</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="basic.frag">
       <Filter>Header Files\ShaderHeaders\shaders</Filter>
     </None>
     <None Include="basic.vert">
+      <Filter>Header Files\ShaderHeaders\shaders</Filter>
+    </None>
+    <None Include="phong.frag">
+      <Filter>Header Files\ShaderHeaders\shaders</Filter>
+    </None>
+    <None Include="phong.vert">
       <Filter>Header Files\ShaderHeaders\shaders</Filter>
     </None>
   </ItemGroup>

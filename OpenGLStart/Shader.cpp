@@ -3,9 +3,12 @@
 #include <stdexcept>
 #include <iostream>
 #include <GLFW/glfw3.h>
+#include<glm/glm.hpp>
 
 using namespace std;
 using namespace ShaderHeaders;
+using namespace glm;
+
 Shader::Shader() {
     this->shaderProgram = glCreateProgram();
 }
@@ -66,4 +69,11 @@ Shader* Shader::linkShaders() {
 
 unsigned int Shader::getShaderProgram() {
     return this->shaderProgramID;
+}
+
+void Shader::setLightPos(vec3 pos)
+{
+    GLuint camPositionLocation = glGetUniformLocation(this->shaderProgramID, "lightPos");
+    glUniform3fv(camPositionLocation, 1, value_ptr(pos));
+
 }

@@ -1,6 +1,4 @@
-#ifndef CAMERA_CLASS_H
-#define CAMERA_CLASS_H
-
+#pragma once
 
 #include<GLFW/glfw3.h>
 #include<glm/glm.hpp>
@@ -38,4 +36,3 @@ public:
 	// Handles camera inputs
 	void Inputs(GLFWwindow* window);
 };
-#endif
