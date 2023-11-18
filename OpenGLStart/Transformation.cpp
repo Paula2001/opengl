@@ -5,36 +5,30 @@
 #include <glm/ext/matrix_clip_space.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+Transformation::Transformation(vec3 cords, float angle) {
+	this->translateVar = translate(mat4(1.0f), cords);
+}
+
 Transformation* Transformation::rotateModel() {
 	// Info : middle angel
-	this->rotateVar = rotate(mat4(1.0f), (float)glfwGetTime(), vec3(1.0f, 0.0f, 1.0f));
+	this->rotateVar = rotate(this->translateVar, (float)glfwGetTime(), vec3(1.0f, 0.0f, 1.0f));
 	return this;
 }
 Transformation* Transformation::translateModel() {
-	this->translateVar = translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, -3.0f));
+	this->translateVar = translate(mat4(1.0f), vec3(1.0f, 1.0f, -1.0f));
 	return this;
 }
 Transformation* Transformation::perspectiveModel() {
-	this->perspectiveVar = perspective(radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
+	this->translateVar = perspective(radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
+	return this;
+}
+
+Transformation* Transformation::scaleModel() {
+	this->translateVar = scale(this->translateVar, vec3(2.0f));
 	return this;
 }
 
 void Transformation::bindTransformation(unsigned int shaderProgram, float test) {
-	unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
 	unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
-	unsigned int projLoc = glGetUniformLocation(shaderProgram, "projection");
-	// Pass them to the shaders
-	glUniformMatrix4fv(modelLoc, 1, GL_FALSE, value_ptr(this->rotateVar));
 	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, value_ptr(this->translateVar));
-	// Note: Currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
-	glUniformMatrix4fv(projLoc, 1, GL_FALSE, value_ptr(this->perspectiveVar));
-
-	auto M = glm::lookAt(glm::vec3(test, 0.0f, 0.0f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.f, 0.f, 1.f));
-	auto matrixID = glGetUniformLocation(shaderProgram, "viewMatrix");
-	glUniformMatrix4fv(matrixID, 1, GL_FALSE, glm::value_ptr(M));
-
-	auto N = glm::perspective(45.0f, 800.f / 600.f, 0.1f, 100.0f);
-	matrixID = glGetUniformLocation(shaderProgram, "projectMatrix");
-	glUniformMatrix4fv(matrixID, 1, GL_FALSE, glm::value_ptr(N));
-
 }

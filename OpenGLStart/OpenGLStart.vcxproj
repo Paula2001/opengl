@@ -139,7 +139,7 @@
     <ClCompile Include="PlainModel.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="ShaderProgram.cpp" />
+    <ClCompile Include="ShaderLoader.cpp" />
     <ClCompile Include="SkyScene.cpp" />
     <ClCompile Include="SphereModel.cpp" />
     <ClCompile Include="SuziFlatModel.cpp" />
@@ -163,7 +163,7 @@
     <ClInclude Include="PlainModel.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Shader.h" />
-    <ClInclude Include="ShaderProgram.h" />
+    <ClInclude Include="ShaderLoader.h" />
     <ClInclude Include="SkyScene.h" />
     <ClInclude Include="sphere.h" />
     <ClInclude Include="SphereModel.h" />
@@ -175,6 +175,10 @@
     <ClInclude Include="tree.h" />
     <ClInclude Include="TreeModel.h" />
     <ClInclude Include="TriangleModel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="basic.frag" />
+    <None Include="basic.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

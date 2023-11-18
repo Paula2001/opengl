@@ -8,20 +8,24 @@
 #include "BushesModel.h"
 #include "PlainModel.h"
 #include "SuziFlatModel.h"
+#include <random>
+
 using namespace ScenesHeaders;
 using namespace ModelsHeaders;
+using namespace ShaderHeaders;
+using namespace std;
 const char* v1 =
 "#version 330\n"
 "uniform mat4 model;"
-"uniform mat4 projectMatrix;"
-"uniform mat4 viewMatrix;"
+"uniform mat4 projection;"
+"uniform mat4 view;"
 "uniform mat4 camMatrix;"
 "out vec3 vertexColor;"
 "layout(location=0) in vec3 vp;"
 "layout(location=1) in vec3 vn;"
 "void main () {"
 "     vertexColor=vn;"
-"     gl_Position = camMatrix * model * vec4(vp, 1.0);"
+"     gl_Position = view * camMatrix * vec4(vp, 1.0);"
 "}";
 
 
@@ -35,87 +39,38 @@ const char* f1 =
 
 Scene* SkyScene::ComposeScene()
 {
-	/*this->addObject(
-		(new DrawableObject())
-		->setModel((new TriangleModel())->setTheShape())
-		->setTransformation(new Transformation())
-		->setShader(
-			(new Shader())
-			->setFragmentShader(f1)
-			->setVertexShader(v1)
-			->linkShaders()
-		)
-	);*/
+	
+	vector<Model*> x = {
+		new TreeModel, 
+		new SuziSmoothModel, 
+		new SuziFlatModel, 
+		new GiftModel,
+		new BushesModel
+	};
+	float initPos = 0.0f;
+	for (int i = 0; i < 2; i++) {
+		std::random_device rd;
+		std::mt19937 gen(rd());
 
-	//this->addObject(
-	//	(new DrawableObject())
-	//	->setModel((new SphereModel)->setTheShape())
-	//	->setTransformation(new Transformation())
-	//	->setShader((new Shader())
-	//		->setFragmentShader(f1)
-	//		->setVertexShader(v1)
-	//		->linkShaders()
-	//	)
-	//);
+		// Define the range
+		std::uniform_int_distribution<> distr(0, 4); // Range is 0 to 4 inclusive
 
-	//this->addObject(
-	//	(new DrawableObject())
-	//	->setModel((new SuziModel)->setTheShape())
-	//	->setTransformation(new Transformation())
-	//	->setShader((new Shader())
-	//		->setFragmentShader(f1)
-	//		->setVertexShader(v1)
-	//		->linkShaders()
-	//	)
-	//);
-
-	//this->addObject(
-	//	(new DrawableObject())
-	//	->setModel((new TreeModel)->setTheShape())
-	//	->setTransformation(new Transformation())
-	//	->setShader((new Shader())
-	//		->setFragmentShader(f1)
-	//		->setVertexShader(v1)
-	//		->linkShaders()
-	//	)
-	//);
-
-	//this->addObject(
-	//	(new DrawableObject())
-	//	->setModel((new GiftModel)->setTheShape())
-	//	->setTransformation(new Transformation())
-	//	->setShader((new Shader())
-	//		->setFragmentShader(f1)
-	//		->setVertexShader(v1)
-	//		->linkShaders()
-	//	)
-	//);
-
-	//this->addObject(
-	//	(new DrawableObject())
-	//	->setModel((new BushesModel)->setTheShape())
-	//	->setTransformation(new Transformation())
-	//	->setShader((new Shader())
-	//		->setFragmentShader(f1)
-	//		->setVertexShader(v1)
-	//		->linkShaders()
-	//	)
-	//);
-
-
-	const unsigned int width = 800;
-	const unsigned int height = 800;
-	this->addObject(
-		(new DrawableObject())
-		->setModel((new SuziFlatModel)->setTheShape())
-		->setTransformation(new Transformation())
-		->setShader((new Shader())
-			->setFragmentShader(f1)
-			->setVertexShader(v1)
-			->linkShaders()
-		)
-	);
-
+		// Generate and print a random number
+		int randomNumber = distr(gen);
+		initPos += 0.3f;
+		Transformation* t = (new Transformation(
+			vec3(initPos, 0.0f, -1.0f),
+			1
+		))->scaleModel()->rotateModel();
+		Shader* shader = new Shader();
+		shader->loadShader("basic.vert", "basic.frag");
+		this->addObject(
+			(new DrawableObject())
+			->setModel((x[randomNumber])->setTheShape())
+			->setTransformation(t)
+			->setShader(shader)
+		);
+	}
 
 	return this;
 }

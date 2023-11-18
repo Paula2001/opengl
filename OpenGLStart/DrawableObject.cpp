@@ -1,5 +1,5 @@
 #include "DrawableObject.h"
-
+using namespace ShaderHeaders;
 DrawableObject* DrawableObject::setModel(Model* model) {
 	this->model = model;
 	return this;
@@ -14,9 +14,8 @@ DrawableObject* DrawableObject::setShader(Shader* shader) {
 }
 void DrawableObject::move(float test) {
 	this->transformation
-		->rotateModel()
-		->perspectiveModel()
-		->translateModel()
+		//->rotateModel()
+		//->translateModel()
 		->bindTransformation(
 			this->shader->getShaderProgram(),
 			test

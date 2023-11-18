@@ -5,7 +5,7 @@
 #include <GLFW/glfw3.h>
 
 using namespace std;
-
+using namespace ShaderHeaders;
 Shader::Shader() {
     this->shaderProgram = glCreateProgram();
 }
@@ -65,5 +65,5 @@ Shader* Shader::linkShaders() {
 }
 
 unsigned int Shader::getShaderProgram() {
-    return this->shaderProgram;
+    return this->shaderProgramID;
 }

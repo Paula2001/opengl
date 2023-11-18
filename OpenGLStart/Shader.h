@@ -1,6 +1,8 @@
 #pragma once
-class Shader
-{
+#include "ShaderLoader.h"
+namespace ShaderHeaders {
+	class Shader : public ShaderLoader
+	{
 	public:
 		Shader();
 		~Shader();
@@ -12,5 +14,7 @@ class Shader
 		unsigned int fragShader;
 		unsigned int vertexShader;
 		unsigned int shaderProgram;
-};
+	};
+
+}
 

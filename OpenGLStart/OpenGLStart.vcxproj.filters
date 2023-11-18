@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\RawShapes">
-      <UniqueIdentifier>{159f9aa7-5860-42b9-ba64-a5a1670d405c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\ModelsHeaders">
       <UniqueIdentifier>{f7b6c954-f12e-4c25-a35d-1ac80324e2d8}</UniqueIdentifier>
     </Filter>
@@ -31,6 +28,12 @@
     <Filter Include="Source Files\Scenes">
       <UniqueIdentifier>{660fa989-1dec-45f8-a0a4-6038466d1670}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\ModelsHeaders\RawShapes">
+      <UniqueIdentifier>{159f9aa7-5860-42b9-ba64-a5a1670d405c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ShaderHeaders\shaders">
+      <UniqueIdentifier>{cb07f748-72d2-4f6b-8498-822f375dfa91}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OpenGLStart.cpp">
@@ -42,7 +45,7 @@
     <ClCompile Include="DrawableObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ShaderProgram.cpp">
+    <ClCompile Include="ShaderLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Shader.cpp">
@@ -114,7 +117,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="tree.h">
-      <Filter>Header Files\RawShapes</Filter>
+      <Filter>Header Files\ModelsHeaders\RawShapes</Filter>
     </ClInclude>
     <ClInclude Include="Model.h">
       <Filter>Header Files\ModelsHeaders</Filter>
@@ -132,10 +135,10 @@
       <Filter>Header Files\ModelsHeaders</Filter>
     </ClInclude>
     <ClInclude Include="suzi.h">
-      <Filter>Header Files\RawShapes</Filter>
+      <Filter>Header Files\ModelsHeaders\RawShapes</Filter>
     </ClInclude>
     <ClInclude Include="sphere.h">
-      <Filter>Header Files\RawShapes</Filter>
+      <Filter>Header Files\ModelsHeaders\RawShapes</Filter>
     </ClInclude>
     <ClInclude Include="SkyScene.h">
       <Filter>Header Files\ScenesHeaders</Filter>
@@ -146,7 +149,7 @@
     <ClInclude Include="Shader.h">
       <Filter>Header Files\ShaderHeaders</Filter>
     </ClInclude>
-    <ClInclude Include="ShaderProgram.h">
+    <ClInclude Include="ShaderLoader.h">
       <Filter>Header Files\ShaderHeaders</Filter>
     </ClInclude>
     <ClInclude Include="GiftModel.h">
@@ -159,19 +162,27 @@
       <Filter>Header Files\ModelsHeaders</Filter>
     </ClInclude>
     <ClInclude Include="bushes.h">
-      <Filter>Header Files\RawShapes</Filter>
+      <Filter>Header Files\ModelsHeaders\RawShapes</Filter>
     </ClInclude>
     <ClInclude Include="PlainModel.h">
       <Filter>Header Files\ModelsHeaders</Filter>
     </ClInclude>
     <ClInclude Include="plain.h">
-      <Filter>Header Files\RawShapes</Filter>
+      <Filter>Header Files\ModelsHeaders\RawShapes</Filter>
     </ClInclude>
     <ClInclude Include="SuziFlatModel.h">
       <Filter>Header Files\ModelsHeaders</Filter>
     </ClInclude>
     <ClInclude Include="suziFlat.h">
-      <Filter>Header Files\RawShapes</Filter>
+      <Filter>Header Files\ModelsHeaders\RawShapes</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="basic.frag">
+      <Filter>Header Files\ShaderHeaders\shaders</Filter>
+    </None>
+    <None Include="basic.vert">
+      <Filter>Header Files\ShaderHeaders\shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

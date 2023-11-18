@@ -6,6 +6,8 @@ Camera::Camera(int width, int height, vec3 position)
 	Camera::width = width;
 	Camera::height = height;
 	Position = position;
+	InitPostition = position;
+	InitOrientation = Orientation;
 }
 
 void Camera::Matrix(float FOVdeg, float nearPlane, float farPlane, unsigned int shader, const char* uniform)
@@ -44,21 +46,26 @@ void Camera::Inputs(GLFWwindow* window)
 	{
 		Position += speed * normalize(cross(Orientation, Up));
 	}
-	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
+	if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS)
 	{
 		Position += speed * Up;
 	}
-	if (glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
+	if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS)
 	{
 		Position += speed * -Up;
 	}
+	if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS)
+	{
+		Position = InitPostition;
+		Orientation = InitOrientation;
+	}
 	if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
 	{
-		speed = 0.4f;
+		speed = 0.004f;
 	}
 	else if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_RELEASE)
 	{
-		speed = 0.1f;
+		speed = 0.01f;
 	}
 
 

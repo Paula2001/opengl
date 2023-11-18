@@ -40,7 +40,7 @@ Application* Application::setWindow(int width, int height,const char* title) {
 }
 
 void Application::initRenderLoop() {
-    Camera* c = new Camera(800, 800, glm::vec3(0.0f, 0.0f, 2.0f));
+    Camera* c = new Camera(800, 800, glm::vec3(1.0f, 1.0f, 10.0f));
     auto x = (new SkyScene())->ComposeScene()->setCamera(c);
     
     while (!glfwWindowShouldClose(this->window)) {

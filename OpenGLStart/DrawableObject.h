@@ -4,7 +4,7 @@
 #include "Shader.h"
 
 using namespace ModelsHeaders;
-
+using namespace ShaderHeaders;
 class DrawableObject
 {
 	public:
