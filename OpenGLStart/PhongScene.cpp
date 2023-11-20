@@ -39,7 +39,6 @@ Scene* PhongScene::ComposeScene()
 		initPos += 0.3f;
 		Shader* shader = new Shader();
 
-		Light* ff = new Light(shader);
 		Transformation* t = (new Transformation(
 			vec3(initPos, 0.0f, -1.0f),
 			1

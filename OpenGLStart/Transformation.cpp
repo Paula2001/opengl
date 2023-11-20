@@ -24,7 +24,7 @@ Transformation* Transformation::perspectiveModel() {
 }
 
 Transformation* Transformation::scaleModel() {
-	this->translateVar = scale(this->translateVar, vec3(2.0f));
+	this->translateVar = scale(this->translateVar, vec3(1.0f));
 	return this;
 }
 

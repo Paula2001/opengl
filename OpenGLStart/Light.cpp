@@ -1,17 +1,21 @@
+#pragma once
 #include "Light.h"
 #include "Shader.h"
 
-using namespace ShaderHeaders;
-Light::Light(Shader* sha)
-{
-	shader = sha;
-	postion = glm::vec3(0.0f);
-	shader->setLightPos(postion);
+
+
+Light::Light(const vec3 pos, const vec3 col) {
+    this->position = pos;
+    this->color = col;
 }
 
+void Light::setUniforms(GLuint shaderProgram) {
+    // Set the light position uniform
+    glm::vec3 pos = glm::vec3(0.0f, 0.0f, 0.0f);
+    GLuint camPositionLocation = glGetUniformLocation(shaderProgram, "lightPos");
+    glUniform3fv(camPositionLocation, 1, glm::value_ptr(pos));
 
-void Light::setPosition(float x, float y, float z)
-{
-	postion = glm::vec3(x, y, z);
-	shader->setLightPos(postion);
+    // Set the light color uniform
+    GLint lightColorLoc = glGetUniformLocation(shaderProgram, "lightColor");
+    glUniform3f(lightColorLoc, 1.0f, 0.1f, 1.0f);
 }

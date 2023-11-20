@@ -15,11 +15,9 @@ float shine = 32.0;
 float blinn = pow(max(dot(worldNorm,halfVector), 0.0), shine);
 float spec = pow(max(dot(reflectVector, camVector), 0.0), shine);
 vec4 specular = vec4(1.0, 1.0, 1.0, 1.0) * spec;
-if(dot(worldNorm,lightVector)<0.0)
-{
-specular = vec4(0.0);
-}
+
 vec4 ambient = vec4(0.1, 0.1, 0.1, 1.0); 
 vec4 diffuse = vec4(0.385, 0.647, 0.812, 1.0) * diff;
-fragColor = ambient + diffuse + specular;
-};
+//fragColor = specular;
+fragColor =  ambient + diffuse + specular;
+}
