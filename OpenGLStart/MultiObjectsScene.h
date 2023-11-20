@@ -1,7 +1,7 @@
 #pragma once
 #include "Scene.h"
 namespace ScenesHeaders {
-	class SkyScene : public Scene
+	class MultiObjectsScene : public Scene
 	{
 		public:
 			Scene* ComposeScene();

@@ -2,7 +2,7 @@
 #include "Camera.h";
 #include "Application.h"
 #include <iostream>
-#include "SkyScene.h"
+#include "MultiObjectsScene.h"
 #include "PhongScene.h"
 #include "Light.h"
 using namespace std;
@@ -49,7 +49,7 @@ void Application::initRenderLoop() {
     Light* light = new Light(glm::vec3(1.0f, 1.0f, 1.0f), // Position
         glm::vec3(1.0, 0.1, 1.0)); // Color
 
-    auto x = (new SkyScene())
+    auto x = (new MultiObjectsScene())
         ->ComposeScene()
         ->setLight(light)
         ->setCamera(c);

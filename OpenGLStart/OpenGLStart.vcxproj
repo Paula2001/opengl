@@ -141,7 +141,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderLoader.cpp" />
-    <ClCompile Include="SkyScene.cpp" />
+    <ClCompile Include="MultiObjectsScene.cpp" />
     <ClCompile Include="SphereModel.cpp" />
     <ClCompile Include="SuziFlatModel.cpp" />
     <ClCompile Include="SuziSmoothModel.cpp" />
@@ -166,7 +166,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderLoader.h" />
-    <ClInclude Include="SkyScene.h" />
+    <ClInclude Include="MultiObjectsScene.h" />
     <ClInclude Include="sphere.h" />
     <ClInclude Include="SphereModel.h" />
     <ClInclude Include="suzi.h" />

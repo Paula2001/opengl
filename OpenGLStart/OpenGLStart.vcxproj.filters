@@ -75,7 +75,7 @@
     <ClCompile Include="Model.cpp">
       <Filter>Source Files\Models</Filter>
     </ClCompile>
-    <ClCompile Include="SkyScene.cpp">
+    <ClCompile Include="MultiObjectsScene.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
@@ -143,7 +143,7 @@
     <ClInclude Include="sphere.h">
       <Filter>Header Files\ModelsHeaders\RawShapes</Filter>
     </ClInclude>
-    <ClInclude Include="SkyScene.h">
+    <ClInclude Include="MultiObjectsScene.h">
       <Filter>Header Files\ScenesHeaders</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
