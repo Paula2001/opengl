@@ -43,7 +43,8 @@ Scene* PhongScene::ComposeScene()
 
 	Transformation* t1 = (new Transformation(
 		vec3(2.0f, 0.0f, 0.0f),
-		1
+		1,
+		1.0f
 	))->scaleModel()->rotateModel();
 	this->addObject(
 		(new DrawableObject())
@@ -53,7 +54,8 @@ Scene* PhongScene::ComposeScene()
 	);
 	Transformation* t2 = (new Transformation(
 		vec3(-2.0f, 0.0f, 0.0f),
-		1
+		1,
+		1.0f
 	))->scaleModel()->rotateModel();
 	this->addObject(
 		(new DrawableObject())
@@ -63,7 +65,8 @@ Scene* PhongScene::ComposeScene()
 	);
 	Transformation* t3 = (new Transformation(
 		vec3(0.0f, 2.0f, 0.0f),
-		1
+		1,
+		1.0f
 	))->scaleModel()->rotateModel();
 	this->addObject(
 		(new DrawableObject())
@@ -73,7 +76,8 @@ Scene* PhongScene::ComposeScene()
 	);
 	Transformation* t4 = (new Transformation(
 		vec3(0.0f, -2.0f, 0.0f),
-		1
+		1,
+		1.0f
 	))->scaleModel()->rotateModel();
 	this->addObject(
 		(new DrawableObject())

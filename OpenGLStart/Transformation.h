@@ -4,7 +4,7 @@ using namespace glm;
 static class Transformation
 {
 public:
-	Transformation(vec3 cords, float angle);
+	Transformation(vec3 cords, float angle, float scale);
 	Transformation* rotateModel();
 	Transformation* translateModel();
 	Transformation* perspectiveModel();
@@ -15,5 +15,8 @@ private:
 	mat4 rotateVar;
 	mat4 translateVar;
 	mat4 perspectiveVar;
+	mat4 scaleVar;
+	vec3 cords;
+	float scaleVarient;
 };
 

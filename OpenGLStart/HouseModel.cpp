@@ -46,12 +46,10 @@ Model* HouseModel::setTheShape() {
         }
     }
     //Vertex Array Object (VAO)
-    GLuint VBO = 0;
     glGenBuffers(1, &VBO); // generate the VBO
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, data.size() * sizeof(float), &data[0], GL_STATIC_DRAW);
 
-    GLuint VAO = 0;
     glGenVertexArrays(1, &VAO); //generate the VAO
     glBindVertexArray(VAO); //bind the VAO
     glBindBuffer(GL_ARRAY_BUFFER, VBO);

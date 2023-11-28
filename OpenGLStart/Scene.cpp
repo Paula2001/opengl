@@ -19,10 +19,11 @@ Scene* Scene::setLight(Light* light) {
 void Scene::init(GLFWwindow* window) {
 	for (auto& obj : this->objects) {
 		glUseProgram(obj->shader->getShaderProgram());
+		obj->draw();
+
 		this->camera->Inputs(window);
 		this->light->setUniforms(obj->shader->getShaderProgram());
 		this->camera->Matrix(45.0f, 0.1f, 100.0f, obj->shader->getShaderProgram(), "camMatrix");
-		obj->draw();
 		obj->move(4.0f);
 	}
 }

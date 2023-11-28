@@ -1,6 +1,8 @@
 #include "SkyBoxScene.h"
 #include "HouseModel.h"
 #include "CubeModel.h"
+#include "PlainModel.h"
+#include "SphereModel.h"
 using namespace ScenesHeaders;
 using namespace std;
 
@@ -9,28 +11,56 @@ Scene* SkyBoxScene::ComposeScene()
 {
 	
 
-	Shader* shader = new Shader();
+	Shader* sky = new Shader();
+	Shader* phong = new Shader();
+	Shader* house = new Shader();
 	auto x = (new CubeModel)->setTheShape();
-	shader->loadShader("skyBox.vert", "skyBox.frag");
-	
+	sky->loadShader("skyBox.vert", "skyBox.frag");
+	phong->loadShader("phong.vert", "phong.frag");
+	house->loadShader("3dHouse.vert", "3dHouse.frag");
+
+
 	Transformation* t1 = (new Transformation(
-		vec3(2.0f, 0.0f, 0.0f),
-		1
+		vec3(0.0f, 0.0f, 0.0f),
+		1,
+		30.0f
 	))->scaleModel()->rotateModel();
+
+	Transformation* t2 = (new Transformation(
+		vec3(0.0f, 0.0f, 0.0f),
+		1,
+		1.0f
+	))->scaleModel()->rotateModel();
+
+
+	Transformation* t3 = (new Transformation(
+		vec3(0.0f, -30.0f, -10.0f),
+		1,
+		1.0f
+	))->scaleModel();
 	/*this->addObject(
 		(new DrawableObject())
-		->setModel(x)
-		->setTransformation(t1)
-		->setShader(shader)
+		->setModel((new SphereModel)->setTheShape())
+		->setTransformation(t2)
+		->setShader(phong)
 	);*/
 
 	this->addObject(
 		(new DrawableObject())
-		->setModel(x)
-		->setTransformation(t1)
-		->setShader(shader)
+		->setModel((new HouseModel)->setTheShape())
+		->setTransformation(t3)
+		->setShader(house)
 	);
-	
+
+
+	this->addObject(
+		(new DrawableObject())
+		->setModel((new CubeModel)->setTheShape())
+		->setTransformation(t1)
+		->setShader(sky)
+	);
+
+
 
 	return this;
 }

@@ -51,15 +51,13 @@ const float skycube[108] = {
 
 Model* CubeModel::setTheShape() {
     //Vertex Array Object (VAO)
-    GLuint VBO = 0;
-    glGenBuffers(1, &VBO); // generate the VBO
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glGenBuffers(1, &this->VBO); // generate the VBO
+    glBindBuffer(GL_ARRAY_BUFFER, this->VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(skycube), &skycube[0], GL_STATIC_DRAW);
 
-    GLuint VAO = 0;
-    glGenVertexArrays(1, &VAO); //generate the VAO
-    glBindVertexArray(VAO); //bind the VAO
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glGenVertexArrays(1, &this->VAO); //generate the VAO
+    glBindVertexArray(this->VAO); //bind the VAO
+    glBindBuffer(GL_ARRAY_BUFFER, this->VBO);
 
     //enable vertex attributes
     glEnableVertexAttribArray(0);
@@ -75,6 +73,7 @@ Model* CubeModel::setTheShape() {
     return this;
 }
 void CubeModel::drawTheShape() {
+    glBindVertexArray(this->VAO);
 
     glDrawArrays(GL_TRIANGLES, 0, 108);
 }

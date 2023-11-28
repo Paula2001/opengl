@@ -5,8 +5,9 @@
 #include <glm/ext/matrix_clip_space.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-Transformation::Transformation(vec3 cords, float angle) {
-	this->translateVar = translate(mat4(1.0f), cords);
+Transformation::Transformation(vec3 cords, float angle, float scale) {
+	this->cords = cords;
+	this->scaleVarient = scale;
 }
 
 Transformation* Transformation::rotateModel() {
@@ -15,7 +16,7 @@ Transformation* Transformation::rotateModel() {
 	return this;
 }
 Transformation* Transformation::translateModel() {
-	this->translateVar = translate(mat4(1.0f), vec3(1.0f, 1.0f, -1.0f));
+	this->translateVar = translate(mat4(1.0f), cords);
 	return this;
 }
 Transformation* Transformation::perspectiveModel() {
@@ -24,15 +25,15 @@ Transformation* Transformation::perspectiveModel() {
 }
 
 Transformation* Transformation::scaleModel() {
-	this->translateVar = scale(this->translateVar, vec3(1.0f));
+	this->translateVar = scale(translateVar, vec3(scaleVarient));
 	return this;
 }
 
 void Transformation::bindTransformation(unsigned int shaderProgram, float test) {
 	unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
 	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, value_ptr(this->translateVar));
-	mat4 M = glm::rotate(glm::mat4(1.0f), 1.0f, glm::vec3(1.0f, 1.0f, 1.0f));
-	M = glm::scale(M, glm::vec3(0.07));
-	GLint idModelTransform = glGetUniformLocation(shaderProgram, "modelMatrix");
-	glUniformMatrix4fv(idModelTransform, 1, GL_FALSE, &M[0][0]);
+
+	unsigned int scale = glGetUniformLocation(shaderProgram, "scale");
+	glUniformMatrix4fv(scale, 1, GL_FALSE, value_ptr(this->scaleVar));
+
 }

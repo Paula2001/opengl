@@ -13,6 +13,7 @@ out vec4 worldPos;
 out vec3 worldNorm;
 uniform mat4 camMatrix;
 uniform mat4 view;
+uniform mat4 scale;
 
 void main () {
 	

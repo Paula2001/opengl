@@ -41,7 +41,8 @@ Scene* MultiObjectsScene::ComposeScene()
 		initPos += 2.5f;
 		Transformation* t1 = (new Transformation(
 			vec3(initPos, 0.0f, 0.0f),
-			1
+			1,
+			1.0f
 		))->scaleModel()->rotateModel();
 		this->addObject(
 			(new DrawableObject())
