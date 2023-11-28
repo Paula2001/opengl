@@ -60,13 +60,14 @@ void Camera::Inputs(GLFWwindow* window)
 		Position = InitPostition;
 		Orientation = InitOrientation;
 	}
+	
 	if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
 	{
-		speed = 0.0004f;
+		speed = 0.00004f;
 	}
 	else if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_RELEASE)
 	{
-		speed = 0.001f;
+		speed = 0.05f;
 	}
 
 

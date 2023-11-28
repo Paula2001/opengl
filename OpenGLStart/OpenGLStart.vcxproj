@@ -133,6 +133,7 @@
     <ClCompile Include="DrawableObject.cpp" />
     <ClCompile Include="gift.cpp" />
     <ClCompile Include="GiftModel.cpp" />
+    <ClCompile Include="HouseModel.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="OpenGLStart.cpp" />
@@ -142,11 +143,13 @@
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderLoader.cpp" />
     <ClCompile Include="MultiObjectsScene.cpp" />
+    <ClCompile Include="SkyBoxScene.cpp" />
     <ClCompile Include="SphereModel.cpp" />
     <ClCompile Include="SuziFlatModel.cpp" />
     <ClCompile Include="SuziSmoothModel.cpp" />
     <ClCompile Include="Transformation.cpp" />
     <ClCompile Include="TreeModel.cpp" />
+    <ClCompile Include="Triangle3rdModel.cpp" />
     <ClCompile Include="TriangleModel.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +161,7 @@
     <ClInclude Include="DrawableObject.h" />
     <ClInclude Include="gift.h" />
     <ClInclude Include="GiftModel.h" />
+    <ClInclude Include="HouseModel.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="PhongScene.h" />
@@ -167,6 +171,7 @@
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderLoader.h" />
     <ClInclude Include="MultiObjectsScene.h" />
+    <ClInclude Include="SkyBoxScene.h" />
     <ClInclude Include="sphere.h" />
     <ClInclude Include="SphereModel.h" />
     <ClInclude Include="suzi.h" />
@@ -176,13 +181,20 @@
     <ClInclude Include="Transformation.h" />
     <ClInclude Include="tree.h" />
     <ClInclude Include="TreeModel.h" />
+    <ClInclude Include="Triangle3rdModel.h" />
     <ClInclude Include="TriangleModel.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="3dHouse.frag" />
+    <None Include="3dHouse.vert" />
     <None Include="basic.frag" />
     <None Include="basic.vert" />
     <None Include="phong.frag" />
     <None Include="phong.vert" />
+    <None Include="skyBox.frag" />
+    <None Include="skyBox.vert" />
+    <None Include="spotLight.freg" />
+    <None Include="spotLight.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

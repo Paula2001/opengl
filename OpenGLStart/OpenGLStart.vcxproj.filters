@@ -99,6 +99,15 @@
     <ClCompile Include="PhongScene.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="SkyBoxScene.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Triangle3rdModel.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="HouseModel.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CallBacks.h">
@@ -182,6 +191,15 @@
     <ClInclude Include="PhongScene.h">
       <Filter>Header Files\ScenesHeaders</Filter>
     </ClInclude>
+    <ClInclude Include="SkyBoxScene.h">
+      <Filter>Header Files\ScenesHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle3rdModel.h">
+      <Filter>Header Files\ModelsHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="HouseModel.h">
+      <Filter>Header Files\ModelsHeaders</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="basic.frag">
@@ -194,6 +212,24 @@
       <Filter>Header Files\ShaderHeaders\shaders</Filter>
     </None>
     <None Include="phong.vert">
+      <Filter>Header Files\ShaderHeaders\shaders</Filter>
+    </None>
+    <None Include="spotLight.freg">
+      <Filter>Header Files\ShaderHeaders\shaders</Filter>
+    </None>
+    <None Include="spotLight.vert">
+      <Filter>Header Files\ShaderHeaders\shaders</Filter>
+    </None>
+    <None Include="skyBox.frag">
+      <Filter>Header Files\ShaderHeaders\shaders</Filter>
+    </None>
+    <None Include="skyBox.vert">
+      <Filter>Header Files\ShaderHeaders\shaders</Filter>
+    </None>
+    <None Include="3dHouse.frag">
+      <Filter>Header Files\ShaderHeaders\shaders</Filter>
+    </None>
+    <None Include="3dHouse.vert">
       <Filter>Header Files\ShaderHeaders\shaders</Filter>
     </None>
   </ItemGroup>

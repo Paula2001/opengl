@@ -11,9 +11,8 @@ Light::Light(const vec3 pos, const vec3 col) {
 
 void Light::setUniforms(GLuint shaderProgram) {
     // Set the light position uniform
-    glm::vec3 pos = glm::vec3(0.0f, 0.0f, 0.0f);
     GLuint camPositionLocation = glGetUniformLocation(shaderProgram, "lightPos");
-    glUniform3fv(camPositionLocation, 1, glm::value_ptr(pos));
+    glUniform3fv(camPositionLocation, 1, glm::value_ptr(this->position));
 
     // Set the light color uniform
     GLint lightColorLoc = glGetUniformLocation(shaderProgram, "lightColor");

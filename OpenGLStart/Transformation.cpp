@@ -11,7 +11,7 @@ Transformation::Transformation(vec3 cords, float angle) {
 
 Transformation* Transformation::rotateModel() {
 	// Info : middle angel
-	this->rotateVar = rotate(this->translateVar, (float)glfwGetTime(), vec3(1.0f, 0.0f, 1.0f));
+	this->rotateVar = rotate(glm::mat4(1.0f), 1.0f, glm::vec3(1.0f, 1.0f, 1.0f));
 	return this;
 }
 Transformation* Transformation::translateModel() {
@@ -31,4 +31,8 @@ Transformation* Transformation::scaleModel() {
 void Transformation::bindTransformation(unsigned int shaderProgram, float test) {
 	unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
 	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, value_ptr(this->translateVar));
+	mat4 M = glm::rotate(glm::mat4(1.0f), 1.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+	M = glm::scale(M, glm::vec3(0.07));
+	GLint idModelTransform = glGetUniformLocation(shaderProgram, "modelMatrix");
+	glUniformMatrix4fv(idModelTransform, 1, GL_FALSE, &M[0][0]);
 }

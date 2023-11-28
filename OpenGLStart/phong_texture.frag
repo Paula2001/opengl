@@ -2,7 +2,6 @@
 in vec4 worldPos;
 in vec3 worldNorm;
 out vec4 fragColor;
-uniform vec3 objColor;
 uniform vec3 camPosition; // Assuming you have a camera position
 uniform vec3 lightPos; // Assuming you have a light position
 void main(void) {

@@ -14,7 +14,7 @@ DrawableObject* DrawableObject::setShader(Shader* shader) {
 }
 void DrawableObject::move(float test) {
 	this->transformation
-		//->rotateModel()
+		->rotateModel()
 		//->translateModel()
 		->scaleModel()
 		->bindTransformation(
