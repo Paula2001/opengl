@@ -108,6 +108,9 @@
     <ClCompile Include="HouseModel.cpp">
       <Filter>Source Files\Models</Filter>
     </ClCompile>
+    <ClCompile Include="CubeModel.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CallBacks.h">
@@ -198,6 +201,9 @@
       <Filter>Header Files\ModelsHeaders</Filter>
     </ClInclude>
     <ClInclude Include="HouseModel.h">
+      <Filter>Header Files\ModelsHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="CubeModel.h">
       <Filter>Header Files\ModelsHeaders</Filter>
     </ClInclude>
   </ItemGroup>
