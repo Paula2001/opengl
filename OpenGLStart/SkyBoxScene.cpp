@@ -3,6 +3,7 @@
 #include "CubeModel.h"
 #include "PlainModel.h"
 #include "SphereModel.h"
+#include "TreeModel.h"
 using namespace ScenesHeaders;
 using namespace std;
 
@@ -38,6 +39,23 @@ Scene* SkyBoxScene::ComposeScene()
 		1,
 		1.0f
 	))->scaleModel();
+	Transformation* t4 = (new Transformation(
+		vec3(10.0f, -30.0f, -10.0f),
+		1,
+		1.0f
+	))->scaleModel();
+
+	Transformation* t5 = (new Transformation(
+		vec3(10.0f, -30.0f, -5.0f),
+		1,
+		1.0f
+	))->scaleModel();
+
+	Transformation* t6 = (new Transformation(
+		vec3(-10.0f, -30.0f, -5.0f),
+		1,
+		1.0f
+	))->scaleModel();
 	/*this->addObject(
 		(new DrawableObject())
 		->setModel((new SphereModel)->setTheShape())
@@ -52,6 +70,32 @@ Scene* SkyBoxScene::ComposeScene()
 		->setShader(house)
 	);
 
+	this->addObject(
+		(new DrawableObject())
+		->setModel((new TreeModel)->setTheShape())
+		->setTransformation(t4)
+		->setColor(vec4(0.13, 0.55, 0.13, 1.0))
+
+		->setShader(phong)
+	);
+
+	this->addObject(
+		(new DrawableObject())
+		->setModel((new TreeModel)->setTheShape())
+		->setTransformation(t5)
+		->setColor(vec4(0.13, 0.55, 0.13, 1.0))
+		->setShader(phong)
+	);
+
+
+	this->addObject(
+		(new DrawableObject())
+		->setModel((new TreeModel)->setTheShape())
+		->setTransformation(t6)
+		->setColor(vec4(0.13, 0.55, 0.13, 1.0))
+
+		->setShader(phong)
+	);
 
 	this->addObject(
 		(new DrawableObject())

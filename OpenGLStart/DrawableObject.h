@@ -11,11 +11,13 @@ class DrawableObject
 		DrawableObject* setModel(Model* model);
 		DrawableObject* setTransformation(Transformation* t);
 		DrawableObject* setShader(Shader* shader);
+		DrawableObject* setColor(vec4 color);
 		Shader* shader;
 		void draw();
 		void move(float test);
 	private:
 		Model* model;
+		vec4 color;
 		Transformation* transformation;
 };
 
